@@ -2,24 +2,25 @@ import collections
 import os
 from os.path import exists
 
+
 def sortCss(css_path):
     css_file = open(css_path, 'r')
     #content = css_file.read()
 
     lines = css_file.readlines()
     css_file.close()
-    # a alphabetical dictonary 
+    # a alphabetical dictonary
     organizer = {}
     bracket_counter = 0
-    # css element split up line byt line 
+    # css element split up line byt line
     css_ele = []
     for line in lines:
         curr_line = line.replace(' ', '')
-        if curr_line != '' and curr_line.split() :
+        if curr_line != '' and curr_line.split():
             # adds line to the current element
             css_ele.append(line)
             curr_line = curr_line.replace('\n', '')
-            # check to see if its at the end of a element 
+            # check to see if its at the end of a element
             if curr_line[len(curr_line) - 1] == '{':
                 bracket_counter += 1
             elif curr_line[0] == '}':
@@ -47,8 +48,12 @@ def sortCss(css_path):
         os.remove(f'{pwd}/sorted.css')
     css_sorted = open('sorted.css', 'w')
     for key in ordered_organizer:
-        #grabs each array of elements that start with this key
+        # grabs each array of elements that start with this key
         for arr in ordered_organizer[key]:
             # writes each element
             for element in arr:
                 css_sorted.write(element)
+
+
+# for debugging and quick testing
+sortCss('site_template.site_html_css.css')
