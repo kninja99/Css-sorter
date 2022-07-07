@@ -1,2 +1,2 @@
 # Css-sorter
-This project will look at a css file and than write a sorted version of that css file.
+This project was inspired from an assignment that I got at work where there were 1000's of lines of css in a css files and I was asked to organise it in somewhat of a alphabetical order (alphabetical order according to the first letter). The goal of this project is to sort the css by the first letter of the selector and write it to a new css file (so we don't lose our originalr data) in order to make this task easier.
