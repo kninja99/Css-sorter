@@ -1,0 +1,29 @@
+body {
+    width: 55px;
+    height: 25px;
+}
+
+.alpha {
+    color: aqua;
+}
+
+.zebra {
+    background-color: antiquewhite;
+}
+
+#charlie {
+    margin: 0;
+    display: flex;
+}
+
+@media all and (max-width: 550px) {
+    #text-overlay {
+        top: 30%;
+        left: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+}
