@@ -7,11 +7,12 @@ body {
     color: aqua;
 }
 
+/* this is a sample comment */
 .zebra {
     background-color: antiquewhite;
 }
 
-#charlie {
+#Charlie {
     margin: 0;
     display: flex;
 }
