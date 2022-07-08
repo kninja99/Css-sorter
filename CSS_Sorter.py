@@ -27,7 +27,11 @@ def sortCss(css_path):
                 bracket_counter -= 1
                 css_ele[len(css_ele) - 1] = css_ele[len(css_ele) - 1] + '\n'
             if curr_line[0] == '}' and bracket_counter <= 0:
-                start = css_ele[0]
+                # making sure we dont start with a comment line
+                for line in css_ele:
+                    if line[0] != '/' and line[len(line) -1] != '/':
+                        start = line.lower()
+                        break
                 # replaceing selectors
                 start = start.replace('.', '')
                 start = start.replace('#', '')
@@ -56,4 +60,4 @@ def sortCss(css_path):
 
 
 # for debugging and quick testing
-sortCss('site_template.site_html_css.css')
+sortCss('test.css')
