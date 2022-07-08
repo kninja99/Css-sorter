@@ -4,6 +4,20 @@ from os.path import exists
 
 
 def sortCss(css_path):
+    '''
+    Parameters
+    -----------
+    css_path : str
+        css_path is the path to the cssfile that you wish to sort. If the path is in CSS_Sorter
+        working directory you will simply type the filename.If it is located else where you will
+        input the path to the file
+        
+    Description
+    -----------
+    This funtion will sort a css file by the first letter of the first selector in aplhabetical
+    order. Once the file is done being sorted it will output a sorted.css file which will
+    be the file that is sorted. Currently this function does not sort media querys
+    '''
     css_file = open(css_path, 'r')
     #content = css_file.read()
 
@@ -57,7 +71,3 @@ def sortCss(css_path):
             # writes each element
             for element in arr:
                 css_sorted.write(element)
-
-
-# for debugging and quick testing
-sortCss('test.css')
